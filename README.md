@@ -1,4 +1,4 @@
-# sergio6
+# netflix_vue
 
 > A Vue.js project
 
