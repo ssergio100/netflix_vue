@@ -48,6 +48,7 @@ export default {
          this.$http.delete('http://localhost:3000/posts/' + card.id).then(response => {
              this.getData()
              $('#'+card.id).remove()
+            //  comentario
          });
   },
   },
