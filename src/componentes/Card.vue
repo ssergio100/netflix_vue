@@ -24,11 +24,10 @@ export default {
     }
   },
   methods: {
-    remove(id) {
-      this.$http.delete('http://localhost:3000/posts/' + id).then(response => {
-        $('#'.id).remove()
-      });
-    },
+    remove() {
+      this.$emit('remove',this)
+      }
+    }
   }
-}
+
 </script>

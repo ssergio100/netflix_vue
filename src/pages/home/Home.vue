@@ -2,14 +2,14 @@
 <div>
   <h2>Social</h2>
   <form>
-    <input type="text" name="titulo"value="" ref="titulo"/>
+    <input type="text" name="titulo" ref="titulo"/>
     <input type="text" name="body" value="" ref="body" />
     <input type="hidden" name="ativo" value="1" />
     <a @click.prevent="newPost()" class="waves-effect waves-teal btn-flat">Cadastrar</a>
   </form>
 
   <div class="row">
-    <Card v-for="post in posts" v-if="post.ativo" v-bind:id="post.id" v-bind:body="post.body" v-bind:titulo="post.titulo" />
+    <Card v-for="post in posts" @remove="doRemove" v-bind:key="post.ativo" v-if="post.ativo" v-bind:id="post.id" v-bind:body="post.body" v-bind:titulo="post.titulo" />
   </div>
 </div>
 </template>
@@ -38,17 +38,18 @@ export default {
           "body": this.$refs.body.value,
           "ativo": 1
         },
-
+     
         this.$http.post('http://localhost:3000/posts', this.postData).then(response => {
           this.getData()
         });
-    }
+    },
+    doRemove(card) {
+        console.log(card)
+         this.$http.delete('http://localhost:3000/posts/' + card.id).then(response => {
+             this.getData()
+             $('#'+card.id).remove()
+         });
   },
-
-  remove(id) {
-    this.$http.delete('http://localhost:3000/posts/' + id).then(response => {
-      this.getData()
-    });
   },
   created() {
     this.getData();
