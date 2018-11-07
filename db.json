@@ -1,3 +1,25 @@
 {
-  "experiencias": []
+  "experiencias": [
+    {
+      "cargo": "sadas",
+      "empresa": "qw",
+      "atribuicoes": "",
+      "ativo": 1,
+      "id": 1
+    },
+    {
+      "cargo": "sadas",
+      "empresa": "qw",
+      "atribuicoes": "",
+      "ativo": 1,
+      "id": 2
+    },
+    {
+      "cargo": "teste",
+      "empresa": "tetetetd",
+      "atribuicoes": "",
+      "ativo": 1,
+      "id": 3
+    }
+  ]
 }

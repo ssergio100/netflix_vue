@@ -10,19 +10,18 @@
     <a class="btn-floating btn-large waves-effect waves-light modal-trigger red" href="#modal1"><i class="material-icons">add</i></a>
     </div>
 </div>
-<div id="modal1" class="modal">
+<div id="modal1" class="modal bottom-sheet">
     <div class="modal-content">
         <h4>Novo</h4>
         <form>
             <input type="text" name="cargo" ref="cargo"/>
             <input type="text" name="empresa" value="" ref="empresa" />
-            <input type="text" name="atribuicoes" value="" ref="atribuicoes" />
             <input type="hidden" name="ativo" value="1" />
             <a @click.prevent="newPost()" class="waves-effect waves-teal btn-flat">Cadastrar</a>
         </form>
     </div>
     <div class="modal-footer">
-    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Fechar</a>
+    <div class="modal-close waves-effect waves-green btn-flat">Fechar</div>
     </div>
 </div>
 
@@ -55,7 +54,7 @@ methods: {
     this.postData = {
         "cargo": this.$refs.cargo.value,
         "empresa": this.$refs.empresa.value,
-        "atribuicoes": this.$refs.atribuicoes.value,
+        "atribuicoes": '',
         "ativo": 1
         },
     
